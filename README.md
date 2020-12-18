@@ -24,8 +24,8 @@ sudo docker-compose -f WordPress/docker-compose.yml up -d
 sudo docker logs -tf --tail="50" WordPress
 ```
 ```
-# There are two database images you can choose from, MySQL:5.7 or MariaDB. As the password authentication method changed in MySQL 8, if you really want to use MySQL, choose 
-# version 5.7 or you need extra command[1] listed below.
+# There are two database images you can choose from, MySQL:5.7 or MariaDB. As the password authentication method changed in MySQL 8, 
+# if you really want to use MySQL, choose version 5.7 or you need extra command[1] listed below.
 image: mysql:8
 command: '--default-authentication-plugin=mysql_native_password'
 ```
