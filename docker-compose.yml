@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  db:
+    image: mariadb
+    container_name: wp-db
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - default
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: supersecretpassword
+      MYSQL_DATABASE: db
+      MYSQL_USER: dbuser
+      MYSQL_PASSWORD: dbpassword
+
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    container_name: wordpress
+    ports:
+      - 8090:80
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: db
+      WORDPRESS_DB_USER: dbuser
+      WORDPRESS_DB_PASSWORD: dbpassword
+    volumes:
+      - ./wp-data:/var/www/html/wp-content
+    networks:
+      - proxy
+      - default
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.wordpress-secure.entrypoints=websecure"
+      - "traefik.http.routers.wordpress-secure.rule=Host(`blog.yourdomain`)"
+      # - "traefik.http.routers.wordpress-secure.service=wordpress-service"
+      # - "traefik.http.services.wordpress-service.loadbalancer.server.port=80"
+
+volumes:
+  db-data:
+    name: wp-db-data
+networks:
+  proxy:
+    external: true
