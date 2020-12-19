@@ -1,5 +1,5 @@
 # WordPress
-## deploy WordPress behind Traefik
+## deploy WordPress
 
 ##### Create docker networks (*if not already created*)
 ```
