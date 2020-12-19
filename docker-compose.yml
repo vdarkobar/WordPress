@@ -15,7 +15,7 @@ services:
     networks:
       - default
     restart: always
-    secrets: # NEW
+    secrets: 
       - mysql_root_password
       - wp_mysql_password
     environment:
