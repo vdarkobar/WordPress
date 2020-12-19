@@ -11,8 +11,8 @@ git clone https://vdarkobar:2211620c9da5dab0c7bb77e9aeb02087d293b293@github.com/
 ```
 ##### Add passwords and change premissions
 ```
-echo | openssl rand -base64 20 >> ./secrets/mysql_root_password.secret
-echo | openssl rand -base64 20 >> ./secrets/wp_mysql_password.secret
+echo | openssl rand -base64 20 >> ~/WordPress/secrets/mysql_root_password.secret
+echo | openssl rand -base64 20 >> ~/WordPress/secrets/wp_mysql_password.secret
 sudo chown -R root:root ~/WordPress/secrets
 ```
 ##### Change domain name
