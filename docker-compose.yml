@@ -13,7 +13,7 @@ services:
     volumes:
       - db-data:/var/lib/mysql
     networks:
-      - default
+      - db
     restart: always
     secrets: 
       - mysql_root_password
@@ -41,8 +41,8 @@ services:
     volumes:
       - ./wp-data:/var/www/html/wp-content
     networks:
-      - proxy
-      - default
+      - wp
+      - db
     restart: always
     labels:
       - "traefik.enable=true"
