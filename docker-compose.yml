@@ -56,5 +56,7 @@ volumes:
   db-data:
     name: wp-db-data
 networks:
-  proxy:
+  db:
+    external: true
+  wp:
     external: true
