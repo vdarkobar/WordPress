@@ -1,7 +1,7 @@
 # WordPress
 ## deploy WordPress behind Traefik
 
-##### Create docker network
+##### Create docker network (*if not already created*)
 ```
 sudo docker network create proxy
 ```
