@@ -6,13 +6,9 @@
 sudo docker network create wp
 sudo docker network create db
 ```
-### Clone this git repository:
+### Clone this git repository (change folder name):
 ```
-git clone https://vdarkobar:2211620c9da5dab0c7bb77e9aeb02087d293b293@github.com/vdarkobar/WordPress.git
-# for multiple instances use this command:
-dir=WordPress; n=1; mkdir -p $dir$n; if test -d $dir$n; then n=$((n+1)); fi && cd  "$(\ls -1dt ./*/ | head -n 1)" && git clone https://vdarkobar:2211620c9da5dab0c7bb77e9aeb02087d293b293@github.com/vdarkobar/WordPress.git .
-
-
+cd $(mktemp -d XXX) && git clone https://vdarkobar:2211620c9da5dab0c7bb77e9aeb02087d293b293@github.com/vdarkobar/WordPress.git .
 ```
 ##### Add passwords and change premissions
 ```
