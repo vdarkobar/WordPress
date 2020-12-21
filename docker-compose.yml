@@ -19,6 +19,7 @@ services:
       - mysql_root_password
       - wp_mysql_password
     environment:
+      - TZ=Germany/Berlin
       - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/mysql_root_password
       - MYSQL_DATABASE=db
       - MYSQL_USER=dbuser
