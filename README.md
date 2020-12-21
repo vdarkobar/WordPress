@@ -7,23 +7,29 @@ sudo docker network create wp
 sudo docker network create db
 ```
 ### Clone this git repository
-#### *Change temp folder name. Change container names, labels and volume name, inside docker-compose file, if multiple instances are planed.*
 ```
-cd $(mktemp -d XXX) && git clone https://vdarkobar:2211620c9da5dab0c7bb77e9aeb02087d293b293@github.com/vdarkobar/WordPress.git .
+cd $(mktemp -d WP-XXX) && git clone https://vdarkobar:2211620c9da5dab0c7bb77e9aeb02087d293b293@github.com/vdarkobar/WordPress.git .
 ```
-##### Add passwords and change premissions
+##### Add passwords and change premissions, *adjust folder name*
 ```
-echo | openssl rand -base64 20 > ~/WordPress/secrets/mysql_root_password.secret
-echo | openssl rand -base64 20 > ~/WordPress/secrets/wp_mysql_password.secret
-sudo chown -R root:root ~/WordPress/secrets
+echo | openssl rand -base64 20 > secrets/mysql_root_password.secret
+echo | openssl rand -base64 20 > secrets/wp_mysql_password.secret
+sudo chown -R root:root secrets/
 ```
-##### Change domain name
+##### *Change container names, labels and volume name, inside docker-compose file, if multiple instances are planed.*
 ```
-sudo nano WordPress/docker-compose.yml
+sudo nano docker-compose.yml
 ```
+
+#### *Change temp folder name*
+```
+cd
+mv WP-XXX/ FOLDER NAME
+```
+
 ##### Start
 ```
-sudo docker-compose -f WordPress/docker-compose.yml up -d
+sudo docker-compose -f FOLDER NAME/docker-compose.yml up -d
 ```
 ##### Log
 ```
