@@ -6,7 +6,8 @@
 sudo docker network create wp
 sudo docker network create db
 ```
-### Clone this git repository (change folder name):
+### Clone this git repository
+#### *Change temp folder name. Change container names inside docker-compose file, if multiple instances are planed.*
 ```
 cd $(mktemp -d XXX) && git clone https://vdarkobar:2211620c9da5dab0c7bb77e9aeb02087d293b293@github.com/vdarkobar/WordPress.git .
 ```
