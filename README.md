@@ -24,12 +24,12 @@ sudo nano docker-compose.yml
 #### *Change temp folder name*
 ```
 cd
-mv WP-XXX/ FOLDER NAME
+mv WP-XXX/ FOLDER_NAME
 ```
 
 ##### Start
 ```
-sudo docker-compose -f FOLDER NAME/docker-compose.yml up -d
+sudo docker-compose -f FOLDER_NAME/docker-compose.yml up -d
 ```
 ##### Log
 ```
