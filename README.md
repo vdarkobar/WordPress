@@ -13,7 +13,7 @@ echo -n "Enter directory name: "; read NAME; mkdir -p "$NAME"; cd "$NAME" \
 ```
 ##### Add passwords and change premissions, *adjust folder name*
 ```
-echo | openssl rand -base64 20 > secrets/mysql_root_password.secret
+echo | openssl rand -base64 48 > secrets/mysql_root_password.secret
 echo | openssl rand -base64 20 > secrets/wp_mysql_password.secret
 sudo chown -R root:root secrets/
 ```
