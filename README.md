@@ -8,7 +8,8 @@ sudo docker network create db
 ```
 ### Clone this git repository
 ```
-cd $(mktemp -d WP-XXX) && git clone https://vdarkobar:2211620c9da5dab0c7bb77e9aeb02087d293b293@github.com/vdarkobar/WordPress.git .
+echo -n "Enter directory name: "; read NAME; mkdir -p "$NAME"; cd "$NAME" \
+&& https://vdarkobar:2211620c9da5dab0c7bb77e9aeb02087d293b293@github.com/vdarkobar/WordPress.git .
 ```
 ##### Add passwords and change premissions, *adjust folder name*
 ```
@@ -20,16 +21,9 @@ sudo chown -R root:root secrets/
 ```
 sudo nano docker-compose.yml
 ```
-
-#### *Change temp folder name*
-```
-cd
-mv WP-XXX/ FOLDER_NAME
-```
-
 ##### Start
 ```
-sudo docker-compose -f FOLDER_NAME/docker-compose.yml up -d
+sudo docker-compose up -d
 ```
 ##### Log
 ```
