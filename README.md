@@ -36,3 +36,15 @@ sudo docker logs -tf --tail="50" wp-db
 image: mysql:8
 command: '--default-authentication-plugin=mysql_native_password'
 ```
+#### File upload limit
+```
+sudo nano html/.htaccess
+```
+##### ** add: **
+```
+php_value upload_max_filesize 128M
+php_value post_max_size 128M
+php_value max_execution_time 300
+php_value max_input_time 300
+```
+
