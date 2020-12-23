@@ -11,7 +11,7 @@ services:
     image: mariadb
     container_name: wp-db # change for multiple instances
     volumes:
-      - db-data:/var/lib/mysql
+      - ./db-data:/var/lib/mysql
     networks:
       - db
     restart: always
@@ -53,9 +53,6 @@ services:
 #      - "traefik.http.routers.wordpress-secure.service=wordpress-service"
 #      - "traefik.http.services.wordpress-service.loadbalancer.server.port=80"
 
-volumes:
-  db-data:
-    name: wp-db-data  # change for multiple instances
 networks:
   db:
     external: true
