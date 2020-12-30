@@ -21,6 +21,33 @@ sudo chown -R root:root secrets/
 ```
 sudo nano docker-compose.yml
 ```
+  
+##### Dynamic config
+```
+http:
+  # All routers:
+  routers:
+
+    # WordPress service router
+    bitwarden-ws:
+      service: WordPress-service
+      middlewares:
+      entryPoints:
+        - "websecure"
+      rule: "Host(`domain`)" # adjust domain
+
+
+  # All services:
+  services:
+
+    # WordPress service
+    WordPress-service:
+      loadBalancer:
+        servers:
+          - url: "http://local-ip:8686" # adjust ip and port nummber
+
+```
+
 ##### Start
 ```
 sudo docker-compose up -d
