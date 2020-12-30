@@ -19,7 +19,7 @@ services:
       - mysql_root_password
       - wp_mysql_password
     environment:
-      - TZ=Germany/Berlin
+      - TZ=$TZ
       - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/mysql_root_password
       - MYSQL_DATABASE=db
       - MYSQL_USER=dbuser
@@ -49,7 +49,7 @@ services:
 #      - "traefik.enable=true"
 #      - "traefik.docker.network=proxy"
 #      - "traefik.http.routers.wordpress-secure.entrypoints=websecure" # # change service name for multiple instances
-#      - "traefik.http.routers.wordpress-secure.rule=Host(`your.domain.com`)" # change domain name, change service name for multiple instances
+#      - "traefik.http.routers.wordpress-secure.rule=Host(`blog.$DOMAINNAME`)" # change domain name, change service name for multiple instances
 #      - "traefik.http.routers.wordpress-secure.service=wordpress-service"
 #      - "traefik.http.services.wordpress-service.loadbalancer.server.port=80"
 
