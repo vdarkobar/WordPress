@@ -1,17 +1,17 @@
 # WordPress
   
 <p align="left">
-  <a href="https://github.com/vdarkobar/Home_Lab">Home</a>
+  <a href="https://github.com/vdarkobar/Home_Cloud#proxmox">Home</a>
 </p>  
   
-##### Create docker networks (*if not already created*)
+##### Create docker networks
 ```
 sudo docker network create wp
 sudo docker network create db
 ```
 ### Clone this git repository
 ```
-echo -n "Enter directory name: "; read NAME; mkdir -p "$NAME"; cd "$NAME" \
+RED='\033[0;31m'; echo -ne "${RED}Enter directory name: "; read NAME; mkdir -p "$NAME"; cd "$NAME" \
 && git clone https://vdarkobar:2211620c9da5dab0c7bb77e9aeb02087d293b293@github.com/vdarkobar/WordPress.git .
 ```
 ##### Add passwords and change premissions
@@ -25,7 +25,7 @@ sudo chown -R root:root secrets/
 sudo nano docker-compose.yml
 ```
   
-##### Dynamic config
+##### Dynamic config (Traefik VM)
 ```
 http:
   # All routers:
@@ -37,7 +37,7 @@ http:
       middlewares:
       entryPoints:
         - "websecure"
-      rule: "Host(`domain`)" # adjust domain
+      rule: "Host(`example.com`)" # adjust domain
 
 
   # All services:
@@ -62,7 +62,7 @@ sudo docker logs -tf --tail="50" wp-db
 ```
 ```
 # There are two database images you can choose from, MySQL:5.7 or MariaDB. As the password authentication method changed in MySQL 8, 
-# if you really want to use MySQL, choose version 5.7 or you need extra command[1] listed below.
+# if you really want to use MySQL, choose version 5.7 or you need extra command listed below.
 image: mysql:8
 command: '--default-authentication-plugin=mysql_native_password'
 ```
