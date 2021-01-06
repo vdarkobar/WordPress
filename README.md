@@ -4,12 +4,12 @@
   <a href="https://github.com/vdarkobar/Home_Cloud#proxmox">Home</a>
 </p>  
   
-##### Create docker networks
+##### Create Docker networks
 ```
 sudo docker network create wp
 sudo docker network create db
 ```
-### Clone this git repository
+### Clone WordPress git repository
 ```
 RED='\033[0;31m'; echo -ne "${RED}Enter directory name: "; read NAME; mkdir -p "$NAME"; cd "$NAME" \
 && git clone https://vdarkobar:2211620c9da5dab0c7bb77e9aeb02087d293b293@github.com/vdarkobar/WordPress.git .
@@ -20,7 +20,7 @@ echo | openssl rand -base64 48 > secrets/mysql_root_password.secret
 echo | openssl rand -base64 20 > secrets/wp_mysql_password.secret
 sudo chown -R root:root secrets/
 ```
-##### *Change container names, labels and volume name, inside docker-compose file, if multiple instances are planed.*
+##### *Change container names, labels and volume name, if multiple instances are planed.*
 ```
 sudo nano docker-compose.yml
 ```
