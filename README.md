@@ -58,7 +58,7 @@ sudo docker logs -tf --tail="50" wp-db
 ```
   
 ##### Dynamic config (Traefik VM)
-*create file: <filename>.yml in Traefik: /data/configurations/ folder for routing and to get a free SSL certificate.*
+*create file: service_name.yml in Traefik: /data/configurations/ folder for routing and to get a free SSL certificate.*
 
 ```
 http:
