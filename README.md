@@ -14,15 +14,36 @@ sudo docker network create db
 RED='\033[0;31m'; echo -ne "${RED}Enter directory name: "; read NAME; mkdir -p "$NAME"; cd "$NAME" \
 && git clone https://vdarkobar:2211620c9da5dab0c7bb77e9aeb02087d293b293@github.com/vdarkobar/WordPress.git .
 ```
-##### Add passwords and change premissions
+  
+#### *Decide what you will use for*:
 ```
-echo | openssl rand -base64 48 > secrets/mysql_root_password.secret
-echo | openssl rand -base64 20 > secrets/wp_mysql_password.secret
-sudo chown -R root:root secrets/
+Time Zone,
+Domain name,
 ```
-##### *Change container names, labels and volume name, if multiple instances are planed.*
+  
+### Select and run all at once. Enter required data:
+*Only works once, use bash*
 ```
-sudo nano docker-compose.yml
+RED='\033[0;31m'
+echo -ne "${RED}Enter Time Zone: "; read TZONE; \
+echo -ne "${RED}Enter Domain name: "; read DNAME; \
+sed -i "s|01|${TZONE}|" .env && \
+sed -i "s|02|${DNAME}|" .env && \
+echo | openssl rand -base64 48 > secrets/mysql_root_password.secret && \
+echo | openssl rand -base64 20 > secrets/wp_mysql_password.secret && \
+sudo chown -R root:root secrets/ && \
+sudo chmod -R 600 secrets/
+```
+### Adjust if necessary, *if multiple instances are planed.*
+  
+### Start
+```
+sudo docker-compose up -d
+```
+##### Log
+```
+sudo docker logs -tf --tail="50" wordpress
+sudo docker logs -tf --tail="50" wp-db
 ```
   
 ##### Dynamic config (Traefik VM)
@@ -50,16 +71,7 @@ http:
           - url: "http://local-ip:8686" # adjust ip and port nummber
 
 ```
-
-##### Start
-```
-sudo docker-compose up -d
-```
-##### Log
-```
-sudo docker logs -tf --tail="50" wordpress
-sudo docker logs -tf --tail="50" wp-db
-```
+  
 ```
 # There are two database images you can choose from, MySQL:5.7 or MariaDB. As the password authentication method changed in MySQL 8, 
 # if you really want to use MySQL, choose version 5.7 or you need extra command listed below.
