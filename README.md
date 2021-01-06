@@ -15,7 +15,7 @@ or:
 
 ---
 
-##### Create Docker networks
+### Create Docker networks
 ```
 sudo docker network create wp
 sudo docker network create db
