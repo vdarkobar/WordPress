@@ -51,7 +51,7 @@ sudo chmod -R 600 secrets/
 ```
 sudo docker-compose up -d
 ```
-##### Log
+### Log
 ```
 sudo docker logs -tf --tail="50" wordpress
 sudo docker logs -tf --tail="50" wp-db
