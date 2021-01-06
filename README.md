@@ -92,7 +92,7 @@ http:
 image: mysql:8
 command: '--default-authentication-plugin=mysql_native_password'
 ```
-#### File upload limit
+#### File upload limit:
 ```
 sudo nano html/.htaccess
 ```
