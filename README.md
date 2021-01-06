@@ -4,6 +4,17 @@
   <a href="https://github.com/vdarkobar/Home_Cloud#proxmox">Home</a>
 </p>  
   
+Login to <a href="https://dash.cloudflare.com/">CloudFlare</a>  and add domain/subdomain for your WordPress.
+```
+    A | example.com | YOUR WAN IP
+```
+or:
+```
+    CNAME | blog | @ (or example.com)
+```
+
+---
+
 ##### Create Docker networks
 ```
 sudo docker network create wp
