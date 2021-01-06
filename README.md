@@ -12,6 +12,7 @@ or:
 ```
     CNAME | blog | @ (or example.com)
 ```
+*docker-compose file predefined to use subdomain: blog*
 
 ---
 
