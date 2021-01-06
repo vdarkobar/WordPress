@@ -4,7 +4,7 @@
   <a href="https://github.com/vdarkobar/Home_Cloud#proxmox">Home</a>
 </p>  
   
-Login to <a href="https://dash.cloudflare.com/">CloudFlare</a>  and use domain or subdomain for your WordPress.
+Login to <a href="https://dash.cloudflare.com/">CloudFlare</a>  and set domain or subdomain for your WordPress.
 ```
     A | example.com | YOUR WAN IP
 ```
@@ -12,7 +12,6 @@ or:
 ```
     CNAME | blog | @ (or example.com)
 ```
-*docker-compose file predefined to use subdomain: blog*
 
 ---
 
@@ -59,6 +58,8 @@ sudo docker logs -tf --tail="50" wp-db
 ```
   
 ##### Dynamic config (Traefik VM)
+*create file: <filename>.yml in Traefik: /data/configurations/ folder for routing and to get a free SSL certificate.*
+
 ```
 http:
   # All routers:
@@ -70,7 +71,7 @@ http:
       middlewares:
       entryPoints:
         - "websecure"
-      rule: "Host(`example.com`)" # adjust domain
+      rule: "Host(`example.com`)" # adjust domain or use subdomain (blog.example.com)
 
 
   # All services:
