@@ -86,6 +86,21 @@ http:
 
 ```
   
+### Middlewares *(Traefik VM)*
+Add to: middlewares.yml in Traefik: /data/configurations/ for non-www to www redirect (if domain name is used instead of subdomain).
+```
+http:
+
+  # All middlewares
+  middlewares:
+  
+    # WWW - Redirect2
+    www-redirect2:
+      redirectRegex:
+        regex: "^https://domain2/(.*)"
+        replacement: "https://www.domain2/${1}"
+```  
+  
 ```
 # There are two database images you can choose from, MySQL:5.7 or MariaDB. As the password authentication method changed in MySQL 8, 
 # if you really want to use MySQL, choose version 5.7 or you need extra command listed below.
