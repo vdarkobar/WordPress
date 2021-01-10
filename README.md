@@ -50,9 +50,9 @@ echo | openssl rand -base64 20 > secrets/wp_mysql_password.secret && \
 sudo chown -R root:root secrets/ && \
 sudo chmod -R 600 secrets/
 ```
-### Adjust if necessary, *if multiple instances are planed.*:
-  
-### Start:
+    
+### Start:  
+Change container names (docker-compose.yml), if multiple instances are planed.
 ```
 sudo docker-compose up -d
 ```
