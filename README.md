@@ -43,6 +43,7 @@ Domain name.
 ### Select and run all at once. Enter required data:
 *Only works once, on wrong data input delete folder and clone again*.
 ```
+clear
 RED='\033[0;31m'
 echo -ne "${RED}Enter Time Zone: "; read TZONE; \
 echo -ne "${RED}Enter Domain name: "; read DNAME; \
