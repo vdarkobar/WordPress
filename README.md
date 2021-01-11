@@ -9,13 +9,16 @@
   <br><br>
 </p>  
   
-Login to <a href="https://dash.cloudflare.com/">CloudFlare</a>  and set domain or subdomain for your WordPress.
+Login to <a href="https://dash.cloudflare.com/">CloudFlare</a> and set Domain name, or Domain name and Subdomain for your WordPress.
 ```
     A | example.com | YOUR WAN IP
 ```
 or:
 ```
-    CNAME | blog | @ (or example.com)
+    A | example.com | YOUR WAN IP
+```
+```
+    CNAME | subdomain | @ (or example.com)
 ```
 
 ---
