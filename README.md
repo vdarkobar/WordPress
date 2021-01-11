@@ -38,7 +38,8 @@ cd "$NAME" && git clone https://github.com/vdarkobar/WordPress.git .
 ```
 Time Zone,
 Domain name,
-Subdomain.
+Subdomain,
+WordPress Port Number.
 ```
   
 ### Select and run all at once. Enter required data:
