@@ -79,6 +79,7 @@ http:
     wordpress-router:
       service: wordpress-service
       middlewares:
+#        - www-redirect@file # Uncomment, give it a unique name. Set the same name in WWW-Redirect (middlewares.yml) if using domain name only.
       entryPoints:
         - "websecure"
       rule: "Host(`subdomain.example.com`)" # comment out if using domain name
@@ -106,7 +107,7 @@ http:
   middlewares:
   
     # WWW-Redirect
-    example-com-www-redirect: # any name
+    www-redirect: # match the name from WordPress router in service_name.yml
       redirectRegex:
         regex: "^https://example.com/(.*)"
         replacement: "https://www.example.com/${1}"
