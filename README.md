@@ -121,5 +121,7 @@ http:
   
 ### Follow <i><a href="https://github.com/vdarkobar/shared/blob/main/WordPress.md">this link</a></i> for additional WordPress settings.  
   
-
+  
+<p align="center">
 <a href="https://github.com/vdarkobar/WordPress#wordpress">top of the page</a>
+</p>
