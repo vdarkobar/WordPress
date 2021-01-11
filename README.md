@@ -28,7 +28,7 @@ or:
 sudo docker network create wp
 sudo docker network create db
 ```
-### Clone WordPress git repository:
+### Clone WordPress Git Repository:
 ```
 RED='\033[0;31m'; echo -ne "${RED}Enter directory name: "; read NAME; mkdir -p "$NAME"; \
 cd "$NAME" && git clone https://github.com/vdarkobar/WordPress.git .
