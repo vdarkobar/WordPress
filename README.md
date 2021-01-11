@@ -111,6 +111,14 @@ http:
         replacement: "https://www.example.com/${1}"
 ```  
   
+### Follow <i><a href="https://github.com/vdarkobar/shared/blob/main/NextCloud.md#edit-configphp-file">this link</a></i> for additional WordPress settings.  
+  
+
+<a href="https://github.com/vdarkobar/WordPress#wordpress">top of the page</a>
+
+
+
+
 #### File upload limit:
 ```
 sudo nano html/.htaccess
