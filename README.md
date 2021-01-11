@@ -38,7 +38,7 @@ cd "$NAME" && git clone https://github.com/vdarkobar/WordPress.git .
 ```
 Time Zone,
 Domain name,
-Subdomain,
+Subdomain (if planned),
 WordPress Port Number.
 ```
   
