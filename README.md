@@ -37,7 +37,7 @@ cd "$NAME" && git clone https://github.com/vdarkobar/WordPress.git .
 #### *Decide what you will use for*:
 ```
 Time Zone,
-Domain name,
+Domain name.
 ```
   
 ### Select and run all at once. Enter required data:
