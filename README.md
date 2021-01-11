@@ -76,7 +76,7 @@ http:
 
     # WordPress service router
     wordpress-router:
-      service: WordPress-service
+      service: wordpress-service
       middlewares:
       entryPoints:
         - "websecure"
@@ -87,7 +87,7 @@ http:
   services:
 
     # WordPress service
-    WordPress-service:
+    wordpress-service:
       loadBalancer:
         servers:
           - url: "http://local-ip:8686" # adjust ip and port nummber
