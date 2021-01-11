@@ -41,7 +41,6 @@ Domain name.
 ```
   
 ### Select and run all at once. Enter required data:
-*Only works once, use bash*
 ```
 RED='\033[0;31m'
 echo -ne "${RED}Enter Time Zone: "; read TZONE; \
