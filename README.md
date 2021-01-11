@@ -77,8 +77,8 @@ http:
       middlewares:
       entryPoints:
         - "websecure"
-      rule: "Host(`example.com`)" # adjust domain or use subdomain (blog.example.com)
-
+      rule: "Host(`subdomain.example.com`)" # comment out if using domain name
+#      rule: "Host(`example.com`) || Host(`www.example.com`)" # comment out if using subdomain, used for non-www to www redirect
 
   # All services:
   services:
@@ -92,18 +92,20 @@ http:
 ```
   
 ### Middlewares *(Traefik VM)*:
-Add to: middlewares.yml in Traefik: /data/configurations/ for non-www to www redirect (if domain name is used instead of subdomain).
+Add to: *middlewares.yml* in Traefik: */data/configurations/* for non-www to www redirect  
+  
+* *If using domain name, used for non-www to www redirect*
 ```
 http:
 
   # All middlewares
   middlewares:
   
-    # WWW - Redirect2
-    www-redirect2:
+    # WWW-Redirect
+    example-com-www-redirect: # any name
       redirectRegex:
-        regex: "^https://domain2/(.*)"
-        replacement: "https://www.domain2/${1}"
+        regex: "^https://example.com/(.*)"
+        replacement: "https://www.example.com/${1}"
 ```  
   
 ```
