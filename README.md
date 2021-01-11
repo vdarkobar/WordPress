@@ -75,7 +75,7 @@ http:
   routers:
 
     # WordPress service router
-    bitwarden-ws:
+    wordpress-router:
       service: WordPress-service
       middlewares:
       entryPoints:
