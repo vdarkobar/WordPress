@@ -58,7 +58,8 @@ sed -i "s|04|${SDNAME}|" .env && \
 echo | openssl rand -base64 48 > secrets/mysql_root_password.secret && \
 echo | openssl rand -base64 20 > secrets/wp_mysql_password.secret && \
 sudo chown -R root:root secrets/ && \
-sudo chmod -R 600 secrets/
+sudo chmod -R 600 secrets/ && \
+rm README.md
 ```
     
 ### Start:  
